@@ -1,8 +1,0 @@
-Credentials cache: API:31147
-        Principal: pnarayan@42.US.ORG
-
-  Issued                Expires               Principal
-Oct 24 09:55:02 2017  Oct 24 19:55:02 2017  krbtgt/42.US.ORG@42.US.ORG
-Oct 24 09:55:05 2017  Oct 24 19:55:02 2017  ldap/ldap-proxy.42.us.org@42.US.ORG
-Oct 24 09:58:15 2017  Oct 24 19:55:02 2017  host/vgs-fn1.42.us.org@42.US.ORG
-Oct 24 10:43:28 2017  Oct 24 19:55:02 2017  ldap/ldap-master.42.us.org@42.US.ORG

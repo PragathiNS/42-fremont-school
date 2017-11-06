@@ -1,4 +1,0 @@
-dn: uid=pnarayan,ou=october,ou=2017,ou=people,dc=42,dc=us,dc=org
-changetype: modify
-replace: mobile
-mobile: 4696643875
