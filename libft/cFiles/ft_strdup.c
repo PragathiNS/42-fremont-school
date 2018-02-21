@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnarayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/20 11:35:25 by pnarayan          #+#    #+#             */
-/*   Updated: 2018/02/20 18:23:10 by pnarayan         ###   ########.fr       */
+/*   Created: 2018/02/20 16:17:54 by pnarayan          #+#    #+#             */
+/*   Updated: 2018/02/20 16:22:19 by pnarayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strncmp(const char *s1, const char *s2, int len)
+char	*ft_strdup(char *src)
 {
-	int i;
-	int diff;
+	int		i;
+	char 	*ret;
+	int		slen;
 
-	i = 0;
-	diff = 0;
-	if (n < 0)
-		diff = (*(s1 + i) - *(s2 + i));
-	if (n == 0)
-		diff = 0;
-	while (i < n && (*(s1 + i) != '\0' || *(s2 + i) != '\0'))
-	{
-		diff = (*(s1 + i) - *(s2 + i));
-		if (diff != 0)
-			break;
-		i++;
-	}
-	return (diff);
+	slen = ft_strlen(src);
+	ret = (char *)malloc(sizeof(*src) * (slen + 1));
+	ret = ft_strcpy(ret, src, len);
+	return (ret);
 }

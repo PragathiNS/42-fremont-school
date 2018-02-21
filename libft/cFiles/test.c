@@ -6,15 +6,11 @@
 /*   By: pnarayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/20 10:50:30 by pnarayan          #+#    #+#             */
-/*   Updated: 2018/02/20 15:09:39 by pnarayan         ###   ########.fr       */
+/*   Updated: 2018/02/20 16:31:57 by pnarayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-
-int ft_strlen(char *str);
-int ft_strcmp(const char *s1, const char *s2);
-int ft_strncmp(const char *s1, const char *s2);
+#include "libft.h"
 
 int		main()
 {
@@ -37,7 +33,18 @@ int		main()
 			printf("String %s has length %d\n", s2, ft_strlen(s2[4]));
 			break;
 		case 2:
-			printf("--- strcmp ---\n");
+			printf("--- strdup ---\n");
+
+		case 3:
+			printf("--- strcpy, strncpy ---\n");
+		case 4:
+			printf("--- strcat, strncat, strlcat ---\n");
+		case 5:
+			printf("--- strchr, strrchr ---\n");
+		case 6:
+			printf("--- strstr, strnstr ---\n");
+		case 7:
+			printf("--- strcmp, strncmp ---\n");
 			i = 0;
 			while (i <= 5)
 			{

@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnarayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/20 14:06:18 by pnarayan          #+#    #+#             */
-/*   Updated: 2018/02/20 15:11:29 by pnarayan         ###   ########.fr       */
+/*   Created: 2018/02/20 16:23:09 by pnarayan          #+#    #+#             */
+/*   Updated: 2018/02/20 18:29:52 by pnarayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-#define LIBFT_H
+#include "libft.h"
 
-#include <stdio.h>
-#include <string.h>
-/*
- * Basic String Functions
- */
-int		ft_strlen(char *str);
-char	*ft_strdup(char *str);
-char	*ft_strcpy(char *dst, const char *src, size_t len);
+char	*ft_strcpy(char *dst, char *src)
+{
+	int 	i;
 
-int		ft_strcmp(const char *s1, const char *s2);
-int		ft_strncmp(const char *s1, const char *s2);
-
-
-#endif
+	i = 0;
+	while (*(src + i) != '\0')
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (dst);
+}
