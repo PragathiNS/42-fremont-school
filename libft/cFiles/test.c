@@ -6,7 +6,7 @@
 /*   By: pnarayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/20 10:50:30 by pnarayan          #+#    #+#             */
-/*   Updated: 2018/02/24 19:44:01 by pnarayan         ###   ########.fr       */
+/*   Updated: 2018/02/27 20:35:54 by pnarayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,5 +87,5 @@ int		main()
 				printf("Thank you for testing these functions\n");
 		}
 	} while (case_no != 50);
-	return 0;
+	return (0);
 }
