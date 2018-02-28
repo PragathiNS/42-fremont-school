@@ -6,11 +6,13 @@
 /*   By: pnarayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/20 13:43:47 by pnarayan          #+#    #+#             */
-/*   Updated: 2018/02/20 13:54:34 by pnarayan         ###   ########.fr       */
+/*   Updated: 2018/02/27 20:09:11 by pnarayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *str)
+#include "libft.h"
+
+int		ft_strlen(const char *str)
 {
 	int count;
 

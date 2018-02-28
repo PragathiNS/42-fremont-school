@@ -1,33 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnarayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/20 18:28:06 by pnarayan          #+#    #+#             */
-/*   Updated: 2018/02/23 00:30:31 by pnarayan         ###   ########.fr       */
+/*   Created: 2018/02/25 12:56:24 by pnarayan          #+#    #+#             */
+/*   Updated: 2018/02/27 20:16:05 by pnarayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dst, const char *src, int slen)
+int		ft_toupper(int c)
 {
-	int 	i;
-
-	i = 0;
-	// TODO : when the src length is smaller than slen
-	while (i < slen && slen <= ft_strlen(src))
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	while (i <= slen)
-	{
-		dst[i] = '\0';
-		i++;
-	}
-	//dst[i] = '\0';
-	return (dst);
+	if (c >= 97 && c <= 122)
+		return (c - 32);
+	return (c);
 }
