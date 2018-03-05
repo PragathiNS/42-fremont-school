@@ -14,5 +14,28 @@
 
 int		ft_atoi(const char *str)
 {
-	return (n);
+	int	i;
+	int	ret;
+	int	sign;
+
+	i = 0;
+	res = 0;
+	sign = 1;
+	if (ft_isspace(str[i]))
+		i++;
+	if (str[i] == '-')
+	{
+		sign = -1;
+		i++;
+	}
+	while (i < ft_strlen(str))
+	{
+		if (!ft_isnum(str[i]))
+		{
+			return (0);
+		}
+		ret = ret * 10 + str[i] - '0';
+		i++;
+	}
+	return (sign * ret);
 }

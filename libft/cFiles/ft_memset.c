@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
 void	*ft_memset(void *b, int c, size_t len)
 {
@@ -27,22 +25,5 @@ void	*ft_memset(void *b, int c, size_t len)
 		b_set++;
 		len--;
 	}
-	printf("%lu -> sizeof(b_set)\n", sizeof(b_set)); 
-	printf("%lu -> sizeof(len)\n", sizeof(len)); 
-	printf("%lu -> sizeof(c)\n", sizeof(c)); 
 	return (b);
-}
-
-int main()
-{
-	//char str[]  = "This is first trial of memset";
-	char str[] = "faew";
-
-	ft_memset(str, 2, 10);
-	puts(str);
-
-	memset(str, '#', 5);
-	puts(str);
-
-	return (0);
 }

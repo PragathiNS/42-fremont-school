@@ -18,16 +18,17 @@
 int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	int		diff;
-	unsigned char *us1;
-	unsigned char *us2;
+	const unsigned char *us1;
+	const unsigned char *us2;
 
-	us1 = (unsigned char*) s1;
-	us2 = (unsigned char*) s2;
+	us1 = (const unsigned char*) s1;
+	us2 = (const unsigned char*) s2;
+	// If they are empty
+	diff = 0;
+	// If they are not identical then if is entered
 	while (n-- != 0)
 	{
-		if (*us1 == *us2)
-			diff = 0;
-		else
+		if (*us1 != *us2)
 		{
 			diff = (int) *us1 - *us2;
 			break;
@@ -35,6 +36,7 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n)
 		us1++;
 		us2++;
 	}
+	// If they are identical
 	return (diff);
 }
 

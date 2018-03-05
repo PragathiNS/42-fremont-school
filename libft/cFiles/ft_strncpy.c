@@ -12,22 +12,22 @@
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dst, const char *src, int slen)
+char	*ft_strncpy(char *dst, const char *src, size_t slen)
 {
-	int 	i;
+	char *d;
+	const char *s;
 
-	i = 0;
-	// TODO : when the src length is smaller than slen
-	while (i < slen && slen <= ft_strlen(src))
+	d = dst;
+	s = src;
+	while (slen > 0)
 	{
-		dst[i] = src[i];
-		i++;
+		slen--;
+		// if src is shorter than slen then copy null at the end of dst
+		if ((*d++ = *s++) != '\0')
+		{
+			ft_memset(d, '\0', slen);
+			break;
+		}
 	}
-	while (i <= slen)
-	{
-		dst[i] = '\0';
-		i++;
-	}
-	//dst[i] = '\0';
 	return (dst);
 }

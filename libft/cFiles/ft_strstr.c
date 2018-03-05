@@ -18,6 +18,22 @@
  */
 char	*ft_strstr(const char *haystack, const char *needle)
 {
+	// New method
+	size_t	needle_len;
+
+	if (*needle == '\0')
+		return ((char *)haystack);
+	needle_len = ft_strlen(needle);
+	while ((haystack = ft_strchr(haystack, *needle)) != NULL)
+	{
+		if (ft_memcmp(haystack, needle, needle_len) == 0)
+			return ((char *) haystack);
+		haystack++;
+	}
+	return (NULL);
+
+
+	/* Early method
 	int		i;
 	int		j;
 	int		haystack_len;
@@ -49,4 +65,5 @@ char	*ft_strstr(const char *haystack, const char *needle)
 			return (haystack[i - j]);
 	}
 	return (NULL);
+	*/
 }
