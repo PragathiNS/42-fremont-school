@@ -6,9 +6,16 @@
  */
 
 #include "libft.h"
+#include <sys/types.h>
+#include <unistd.h>
 
 void	*ft_memalloc(size_t size)
 {
-	char	*area;
+	void	*area;
 
-
+	// gets the starting position of the heap
+	area = sbrk(0);
+	if (sbrk(size) == (void *) -1)
+		return (NULL);
+	return (area);
+}

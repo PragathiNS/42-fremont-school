@@ -18,6 +18,19 @@
 #include <unistd.h>
 
 /*
+ * Memory block structure
+ */
+
+typedef struct s_block *t_block;
+
+struct s_block
+{
+	size_t	size;
+	t_block	next;
+	int	free;
+};
+
+/*
  * Basic Memory Functions
  */
 
