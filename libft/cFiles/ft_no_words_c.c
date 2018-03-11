@@ -1,20 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_islower.c                                       :+:      :+:    :+:   */
+/*   ft_no_words_c.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnarayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/07 19:34:01 by pnarayan          #+#    #+#             */
-/*   Updated: 2018/03/07 19:34:02 by pnarayan         ###   ########.fr       */
+/*   Created: 2018/03/11 00:21:29 by pnarayan          #+#    #+#             */
+/*   Updated: 2018/03/11 00:21:35 by pnarayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_islower(int c)
+int		ft_no_words_c(char *str, char c)
 {
-	if (c >= 97 && c <= 122)
-		return (1);
-	return (0);
+	int		i;
+	int		word_count;
+	int		start;
+
+	i = 0;
+	word_count = 0;
+	start = 1;
+	while (str[i] != '\0')
+	{
+		if (str[i] != c)
+		{
+			if (start)
+			{
+				word_count++;
+				start = 0;
+			}
+		}
+		else
+			start = 1;
+		i++;
+	}
+	return (word_count);
 }

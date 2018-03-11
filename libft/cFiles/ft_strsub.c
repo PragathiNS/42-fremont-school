@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_islower.c                                       :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnarayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/07 19:34:01 by pnarayan          #+#    #+#             */
-/*   Updated: 2018/03/07 19:34:02 by pnarayan         ###   ########.fr       */
+/*   Created: 2018/03/08 21:15:42 by pnarayan          #+#    #+#             */
+/*   Updated: 2018/03/08 22:32:35 by pnarayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_islower(int c)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	if (c >= 97 && c <= 122)
-		return (1);
-	return (0);
-}
+
+

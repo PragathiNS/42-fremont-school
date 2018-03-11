@@ -1,21 +1,23 @@
-/* 
- * Allocates and returns a "fresh" memory area
- * Memory allocated is initialized to 0
- * If the allocation fails then function returns NULL
- *
- */
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pnarayan <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/03/07 19:48:49 by pnarayan          #+#    #+#             */
+/*   Updated: 2018/03/08 19:56:35 by pnarayan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
-#include <sys/types.h>
-#include <unistd.h>
 
 void	*ft_memalloc(size_t size)
 {
-	void	*area;
+	void *ret;
 
-	// gets the starting position of the heap
-	area = sbrk(0);
-	if (sbrk(size) == (void *) -1)
+	ret = malloc(size);
+	if (ret == NULL)
 		return (NULL);
-	return (area);
+	return (ret);
 }

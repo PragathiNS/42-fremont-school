@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_islower.c                                       :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnarayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/07 19:34:01 by pnarayan          #+#    #+#             */
-/*   Updated: 2018/03/07 19:34:02 by pnarayan         ###   ########.fr       */
+/*   Created: 2018/03/08 21:13:23 by pnarayan          #+#    #+#             */
+/*   Updated: 2018/03/08 21:15:30 by pnarayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_islower(int c)
+int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	if (c >= 97 && c <= 122)
+	if (ft_strncmp(s1, s2, n) == 0)
 		return (1);
 	return (0);
 }

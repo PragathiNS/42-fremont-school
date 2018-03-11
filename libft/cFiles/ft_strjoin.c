@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_islower.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnarayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/07 19:34:01 by pnarayan          #+#    #+#             */
-/*   Updated: 2018/03/07 19:34:02 by pnarayan         ###   ########.fr       */
+/*   Created: 2018/03/08 23:06:04 by pnarayan          #+#    #+#             */
+/*   Updated: 2018/03/08 23:11:04 by pnarayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_islower(int c)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	if (c >= 97 && c <= 122)
-		return (1);
-	return (0);
+	char	*ret;
+	size_t	tlen;
+
+	tlen = ft_strlen(s1) + ft_strlen(s2);
+	ret = (char *)ft_memalloc(tlen + 1);
+	if (ret == NULL)
+		return (NULL);
+	ret = ft_strcat(s1, s2);
+	return (ret);
 }

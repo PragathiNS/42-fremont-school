@@ -6,22 +6,19 @@
 /*   By: pnarayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/27 17:46:07 by pnarayan          #+#    #+#             */
-/*   Updated: 2018/02/27 18:40:36 by pnarayan         ###   ########.fr       */
+/*   Updated: 2018/03/07 19:54:09 by pnarayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
 void	*ft_memmove(void *ds, const void *sr, size_t len)
 {
-	char *dst = ds;
-	const char *src = sr;
+	char		*dst;
+	const char	*src;
 
-	printf("%s\n", dst);
-	printf("%s\n", src);
-
+	dst = ds;
+	src = sr;
 	if (src < dst && dst < src + len)
 	{
 		src += len;
@@ -34,25 +31,5 @@ void	*ft_memmove(void *ds, const void *sr, size_t len)
 		while (n-- != 0)
 			*dst++ = *src++;
 	}
-
 	return (ds);
-}
-
-int main()
-{
-	char *s = "Hello Prags";
-
-	printf("Before memcpy = %s\n", s);
-	ft_memmove((char *)s + 1, s + 3, 5);
-	printf("After memcpy = %s\n", s);
-
-	char *s1;
-   //	= "Hello Prags";
-
-	s1 = "Hello Prags";
-
-	printf("Before memcpy = %s\n", s1);
-	printf("After memcpy = %s\n", memmove(s1 + 3, s1, 5));
-
-	return (0);
 }

@@ -6,21 +6,18 @@
 /*   By: pnarayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/27 18:41:30 by pnarayan          #+#    #+#             */
-/*   Updated: 2018/02/27 20:01:30 by pnarayan         ###   ########.fr       */
+/*   Updated: 2018/03/07 19:55:54 by pnarayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char uc;
-	const unsigned char *src;
+	unsigned char		uc;
+	const unsigned char	*src;
 
-	uc = (unsigned char) c;
+	uc = (unsigned char)c;
 	src = s;
 	while (n-- != 0)
 	{
@@ -29,14 +26,4 @@ void	*ft_memchr(const void *s, int c, size_t n)
 		src++;
 	}
 	return (NULL);
-}
-
-int main(void)
-{
-	char *s = "Pragathi";
-
-	printf("%s\n", ft_memchr(s, 's', 7));
-	printf("%s\n", memchr(s, 's', 7)); 
-
-	return (0);
 }

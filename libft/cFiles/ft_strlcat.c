@@ -6,7 +6,7 @@
 /*   By: pnarayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/27 20:09:51 by pnarayan          #+#    #+#             */
-/*   Updated: 2018/02/27 20:09:52 by pnarayan         ###   ########.fr       */
+/*   Updated: 2018/03/07 19:40:39 by pnarayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,5 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	if (d == NULL)
 		d = dest + size;
 	len = d - dest;
-	// if size is less than the dest + src combined then we wanna copy only the size of the buffer which is taken care by strlcpy function
 	return (len + ft_strlcpy(d, src, size - len));
 }

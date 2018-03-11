@@ -6,7 +6,7 @@
 /*   By: pnarayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/27 20:09:19 by pnarayan          #+#    #+#             */
-/*   Updated: 2018/02/27 20:09:22 by pnarayan         ###   ########.fr       */
+/*   Updated: 2018/03/07 19:41:57 by pnarayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ char	*ft_strncat(char *dest, const char *src, size_t n)
 	d = dest;
 	while (*d != '\0')
 		d++;
-	//ft_strncpy(d, src, n);
-	// ft_strncpy doesn't add '\0' at the end if n is greater than the len of src.
 	while (n != '\0' && (*d = *src++) != '\0')
 	{
 		n--;

@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_islower.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnarayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/07 19:34:01 by pnarayan          #+#    #+#             */
-/*   Updated: 2018/03/07 19:34:02 by pnarayan         ###   ########.fr       */
+/*   Created: 2018/03/11 00:36:12 by pnarayan          #+#    #+#             */
+/*   Updated: 2018/03/11 03:08:31 by pnarayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_islower(int c)
+t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	if (c >= 97 && c <= 122)
-		return (1);
-	return (0);
+
+
+
+
 }
