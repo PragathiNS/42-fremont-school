@@ -1,14 +1,22 @@
 # 42-fremont-school
+> In 42 Silicon Valley School, I am re-learning my coding style and it's helping me become a better programmer. Read more about the school [42](https://www.42.us.org/)
+___
+### PISCINE
+Skills: how to use terminal, shell commands (read man pages for everything), C Programming, Team-work, mentoring and being mentored (Peer-peer learning and evaluation)
+#### DAILY EXERCISES (00 - 13)
 
-#### Piscine
+#### RUSHES
 
+#### FINAL PROJECT
 
+#### EXAMS
+
+___
 ### CADET
-#### LIBFT
+#### [LIBFT](https://www.pragathin.com/42-cadet/libft)
 Created a dynamic library with all the string, memory and list functions.
-Click on this link [libft](https://www.pragathin.com/42-cadet/libft) for detailed explanation.
 
-### HERCULES
+#### [HERCULES](https://www.pragathin.com/42-cadet/hercules)
 1. Nemean Lion
 2. Lernaean Hydra
 3. Ceryneian Hind
@@ -20,4 +28,4 @@ Click on this link [libft](https://www.pragathin.com/42-cadet/libft) for detaile
 9. Girdle of Hippolyta
 10. Cattle of Geryon
 11. Apples of the Hesperides
-12. Capturing Cerbrus
+12. Capturing Cerberus
