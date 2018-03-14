@@ -13,7 +13,7 @@ Skills: how to use terminal, shell commands (read man pages for everything), C P
 
 ___
 ### CADET
-#### [LIBFT](https://www.pragathin.com/42-cadet/libft)
+#### [LIBFT](https://github.com/PragathiNS/42-fremont-school/wiki/LIBFT)
 Created a dynamic library with all the string, memory and list functions.
 
 #### [HERCULES](https://www.pragathin.com/42-cadet/hercules)
