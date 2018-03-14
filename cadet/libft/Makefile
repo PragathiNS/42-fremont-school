@@ -25,10 +25,12 @@ all: $(NAME)
 $(NAME):
 	$(CC) $(CFLAGS) $(SRC)
 	ar rc $(NAME) $(OBJ)
-	rm $(OBJ)
 	ranlib $(NAME)
 
-fclean:
+clean:
+	/bin/rm -f $(OBJ)
+
+fclean: clean
 	/bin/rm -f $(NAME)
 
 re: fclean all
