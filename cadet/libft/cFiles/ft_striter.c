@@ -15,18 +15,11 @@
 void	ft_striter(char *s, void (*f)(char *))
 {
 	int		i;
-	int		j;
 
 	i = 0;
-	j = 0;
 	if ( s != NULL && f != NULL)
 	{
 		i = ft_strlen(s);
-		while (j < 1)
-		{
-			(*f)(s);
-			s++;
-			j++;
-		}
+
 	}
 }
