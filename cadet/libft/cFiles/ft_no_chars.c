@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_no_chars.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnarayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/20 16:17:54 by pnarayan          #+#    #+#             */
-/*   Updated: 2018/03/14 20:06:39 by pnarayan         ###   ########.fr       */
+/*   Created: 2018/03/14 20:25:33 by pnarayan          #+#    #+#             */
+/*   Updated: 2018/03/14 20:31:09 by pnarayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *src)
+int		ft_no_chars(char *s, int i)
 {
-	char	*ret;
-	size_t	slen;
+	int		count;
 
-	slen = ft_strlen(src);
-	ret = (char *)malloc(slen + 1);
-	if (ret == NULL)
-		return (NULL);
-	ft_memcpy(ret, src, slen + 1);
-	return ((char *)ret);
+	count = 0;
+	while (!ft_isspace(s[i]))
+	{
+		count++;
+		i++;
+	}
+	return (count);
 }

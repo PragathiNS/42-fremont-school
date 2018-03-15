@@ -6,7 +6,7 @@
 /*   By: pnarayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/11 00:26:49 by pnarayan          #+#    #+#             */
-/*   Updated: 2018/03/11 00:29:49 by pnarayan         ###   ########.fr       */
+/*   Updated: 2018/03/14 21:42:53 by pnarayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,5 @@
 
 void	ft_putendl(char const *s)
 {
-	ft_putstr(s);
-	write(1, "\n", 1);
+	ft_putendl_fd(s, 1);
 }

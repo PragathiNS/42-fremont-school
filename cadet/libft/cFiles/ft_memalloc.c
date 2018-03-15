@@ -6,7 +6,7 @@
 /*   By: pnarayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 19:48:49 by pnarayan          #+#    #+#             */
-/*   Updated: 2018/03/08 19:56:35 by pnarayan         ###   ########.fr       */
+/*   Updated: 2018/03/15 01:29:45 by pnarayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memalloc(size_t size)
 {
-	void *ret;
+	void	*ret;
 
 	ret = malloc(size);
 	if (ret == NULL)

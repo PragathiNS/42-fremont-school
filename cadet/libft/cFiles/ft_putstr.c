@@ -6,7 +6,7 @@
 /*   By: pnarayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/26 23:34:23 by pnarayan          #+#    #+#             */
-/*   Updated: 2018/03/11 00:26:33 by pnarayan         ###   ########.fr       */
+/*   Updated: 2018/03/14 21:41:43 by pnarayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,5 @@
 
 void	ft_putstr(const char *s)
 {
-	int		i;
-
-	i = 0;
-	while (s[i])
-	{
-		ft_putchar(s[i]);
-		i++;
-	}
+	ft_putstr_fd(s, 1);
 }

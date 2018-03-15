@@ -6,7 +6,7 @@
 /*   By: pnarayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/08 20:16:09 by pnarayan          #+#    #+#             */
-/*   Updated: 2018/03/08 20:18:02 by pnarayan         ###   ########.fr       */
+/*   Updated: 2018/03/15 01:43:53 by pnarayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void	ft_strclr(char *s)
 {
 	if (s)
-		ft_bzero(s, ft_strlen(s));
+		ft_memset(s, (int)'\0', ft_strlen(s));
 }

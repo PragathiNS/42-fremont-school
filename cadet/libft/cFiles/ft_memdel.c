@@ -6,7 +6,7 @@
 /*   By: pnarayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/08 19:56:48 by pnarayan          #+#    #+#             */
-/*   Updated: 2018/03/08 19:57:55 by pnarayan         ###   ########.fr       */
+/*   Updated: 2018/03/15 01:33:51 by pnarayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	ft_memdel(void **ap)
 {
-	if (!ap || !*ap)
-		return ;
-	free (ap);
+	free(ap);
 	*ap = NULL;
 }

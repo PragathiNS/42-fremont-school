@@ -6,7 +6,7 @@
 /*   By: pnarayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/20 14:06:18 by pnarayan          #+#    #+#             */
-/*   Updated: 2018/03/14 00:40:55 by pnarayan         ###   ########.fr       */
+/*   Updated: 2018/03/15 01:17:08 by pnarayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-typedef struct		s_block
+typedef struct		s_list
 {
 	void			*content;
 	size_t			content_size;
@@ -88,7 +88,12 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
-int					ft_no_words_c(char *str, char c)
-int					ft_wordcount(char *str)
+int					ft_no_words_c(char *str, char c);
+int					ft_wordcount(char *str);
+void				ft_swap(char *a, char *b);
+int					ft_no_digits(int n);
+int					ft_no_chars(char *s, int i);
+char				**ft_split_whitespaces(char *s);
+char				*ft_strrev(char *s);
 
 #endif

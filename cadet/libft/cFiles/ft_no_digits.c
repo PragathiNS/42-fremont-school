@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_no_digits.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnarayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/13 18:50:29 by pnarayan          #+#    #+#             */
-/*   Updated: 2018/03/13 18:50:39 by pnarayan         ###   ########.fr       */
+/*   Created: 2018/03/14 23:37:26 by pnarayan          #+#    #+#             */
+/*   Updated: 2018/03/14 23:47:18 by pnarayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+int		ft_no_digits(int n)
 {
-	t_list	*new;
-	t_list	*lst;
+	int	digits;
 
-	if (!lst)
-		return (NULL);
-	list = f(lst);
-	new = list;
-	while (lst->next)
+	digits = 0;
+	while (n > 0)
 	{
-		lst = lst->next;
-		if (!(list->next = f(lst)))
-		{
-			free(list->next);
-			return (NULL);
-		}
-		list = list->next;
+		n = n / 10;
+		digits += 1;
 	}
-	return (new);
+	return (digits);
 }

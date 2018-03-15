@@ -6,7 +6,7 @@
 /*   By: pnarayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/27 17:46:07 by pnarayan          #+#    #+#             */
-/*   Updated: 2018/03/07 19:54:09 by pnarayan         ###   ########.fr       */
+/*   Updated: 2018/03/14 20:06:06 by pnarayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ void	*ft_memmove(void *ds, const void *sr, size_t len)
 		src += len;
 		dst += len;
 		while (len-- != 0)
-			*--dst == *--src;
+			*--dst = *--src;
 	}
 	else
 	{
-		while (n-- != 0)
+		while (len-- != 0)
 			*dst++ = *src++;
 	}
 	return (ds);
