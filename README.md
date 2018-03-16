@@ -16,7 +16,7 @@ ___
 #### [LIBFT](https://github.com/PragathiNS/42-fremont-school/wiki/LIBFT)
 Created a dynamic library with all the string, memory and list functions.
 
-#### [HERCULES](https://www.pragathin.com/42-cadet/hercules)
+#### [HERCULES](https://github.com/PragathiNS/42-fremont-school/wiki/hercules)
 1. Nemean Lion
 2. Lernaean Hydra
 3. Ceryneian Hind
