@@ -6,7 +6,7 @@
 /*   By: pnarayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/20 14:06:18 by pnarayan          #+#    #+#             */
-/*   Updated: 2018/03/15 01:17:08 by pnarayan         ###   ########.fr       */
+/*   Updated: 2018/03/17 02:59:09 by pnarayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,8 @@ char				*ft_strncpy(char *dst, const char *src, size_t n);
 size_t				ft_strlcpy(char *dst, const char *src, size_t len);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
-char				*ft_strstr(const char *haystack, const char *needle);
-char				*ft_strnstr(const char *haystack, const char *needle,
-		size_t n);
+char				*ft_strstr(const char *hay, const char *need);
+char				*ft_strnstr(const char *hay, const char *need, size_t n);
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 char				*ft_strcat(char *s1, const char *s2);
@@ -88,12 +87,9 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
-int					ft_no_words_c(char *str, char c);
 int					ft_wordcount(char *str);
 void				ft_swap(char *a, char *b);
-int					ft_no_digits(int n);
-int					ft_no_chars(char *s, int i);
-char				**ft_split_whitespaces(char *s);
+size_t				ft_no_digits(int n);
 char				*ft_strrev(char *s);
 
 #endif
