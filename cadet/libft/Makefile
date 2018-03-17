@@ -6,7 +6,7 @@
 #    By: pnarayan <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/02/20 16:56:27 by pnarayan          #+#    #+#              #
-#    Updated: 2018/03/15 01:14:33 by pnarayan         ###   ########.fr        #
+#    Updated: 2018/03/17 02:55:02 by pnarayan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,8 +29,7 @@ SRC += ft_isalnum.c ft_isalpha.c ft_isdigit.c ft_isascii.c ft_isprint.c \
 SRC += ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c \
 	   ft_lstmap.c
 
-SRC += ft_no_chars.c ft_no_digits.c ft_no_words_c.c ft_split_whitespaces.c \
-	   ft_swap.c ft_wordcount.c
+SRC += ft_no_digits.c ft_swap.c ft_wordcount.c
 
 SRC += ft_putchar.c ft_putchar_fd.c ft_putendl.c ft_putendl_fd.c \
 	   ft_putnbr.c ft_putnbr_fd.c ft_putstr.c ft_putstr_fd.c
@@ -39,7 +38,7 @@ OBJ = $(SRC:.c=.o)
 
 CC = gcc
 
-CFLAGS = -Wall -Werror -Wextra -c
+CFLAGS = -Wall -Werror -Wextra -I. -c
 
 all: $(NAME)
 
@@ -55,3 +54,6 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+	$(CC) $(CFLAGS) $(SRC)
+	ar rc $(NAME) $(OBJ)
+	ranlib $(NAME)
