@@ -6,13 +6,13 @@
 /*   By: pnarayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/07 19:34:46 by pnarayan          #+#    #+#             */
-/*   Updated: 2018/03/07 19:34:55 by pnarayan         ###   ########.fr       */
+/*   Updated: 2018/03/15 19:20:00 by pnarayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isupper(int c)
+int		ft_isupper(int c)
 {
 	if (c >= 65 && c <= 90)
 		return (1);

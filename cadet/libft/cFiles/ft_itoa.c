@@ -6,7 +6,7 @@
 /*   By: pnarayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/11 00:25:32 by pnarayan          #+#    #+#             */
-/*   Updated: 2018/03/15 01:16:06 by pnarayan         ###   ########.fr       */
+/*   Updated: 2018/03/17 02:51:08 by pnarayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,23 @@
 
 char	*ft_itoa(int n)
 {
-	int		i;
-	int		sign;
-	int		len;
-	char	*s;
+	char			*s;
+	size_t			len;
+	unsigned int	n_c;
 
-	if ((sign = n) < 0)
-		n = n * -1;
-	i = 0;
 	len = ft_no_digits(n);
-	if (sign < 0)
-		len = len + 1;
-	s = ft_strnew(len);
-	if (s)
+	n_c = n;
+	if (n < 0)
 	{
-		while (n > 0)
-		{
-			s[i++] = n % 10 + '0';
-			n = n / 10;
-		}
-		if (sign < 0)
-			s[i++] = '-';
-		s[i] = '\0';
-		s = ft_strrev(s);
+		n_c = -n;
+		len++;
 	}
+	if (!(s = ft_strnew(len)))
+		return (NULL);
+	s[--len] = n_c % 10 + '0';
+	while (n_c /= 10)
+		s[--len] = n_c % 10 + '0';
+	if (n < 0)
+		*(s + 0) = '-';
 	return (s);
 }

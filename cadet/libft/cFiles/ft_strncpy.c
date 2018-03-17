@@ -6,27 +6,26 @@
 /*   By: pnarayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/20 18:28:06 by pnarayan          #+#    #+#             */
-/*   Updated: 2018/03/07 19:45:47 by pnarayan         ###   ########.fr       */
+/*   Updated: 2018/03/17 01:49:11 by pnarayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dst, const char *src, size_t slen)
+char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
-	char		*d;
-	const char	*s;
+	size_t	i;
 
-	d = dst;
-	s = src;
-	while (slen > 0)
+	i = 0;
+	while (src[i] != '\0' && i < len)
 	{
-		slen--;
-		if ((*d++ = *s++) != '\0')
-		{
-			ft_memset(d, '\0', slen);
-			break ;
-		}
+		dst[i] = src[i];
+		i++;
+	}
+	while (i < len)
+	{
+		dst[i] = '\0';
+		i++;
 	}
 	return (dst);
 }
