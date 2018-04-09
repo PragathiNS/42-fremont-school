@@ -1,0 +1,36 @@
+Use Docker machine to:
+1. Install and run Docker on Mac or Windows.
+2. Provision and manage multiple remote Docker hosts
+3. Provision Swarm Clusters
+
+DM?
+It is a tool that lets you install Docker Engine on virtual hosts, and manage
+the hosts with docker-machine commands.
+
+Start, inspect, stop and restart a managed host, upgrade the Docker client and
+Daemon and configure a Docker client to talk to your host.
+
+Difference between Docker Engine and Docker Machine?
+Docker / Docker Engine --> Client-server application made up of the Docker
+daemon, a REST API that specifies interfaces for interacting with the daemon,
+and a Command Line Interface (CLI) client that talks to the daemon (throught the
+REST API wrapper).
+
+Docker Machine --> a tool for provisioning and managing our Dockerized hosts
+(hosts with Docker engine on them). Typically, DM is installed on the local
+system. It has its own command line client docker-machine and the Docker engine
+client docker.
+machine can be used to install Docker Engine on one or more virtual systems.
+These can be local or remote. Local - When you use Machine to install and run
+Docker Engine in VirtualBox on Mac or Windows.
+Remote - When you use Machine to provision Dockerized hosts on cloud providers.
+
+Use Machine to run Docker Containers,
+1. create a new (or start an existing) Docker virtual Machine
+2. switch your env to your new VM
+3. use the docker client to create, load and manage containers
+
+docker-machine create -d virtualbox default
+This command downloads a lightweight Linux distribution (boot2docker) with the Docker daemon installed, and creates and starts a VirtualBox VM with Docker running.
+
+https://docs.docker.com/machine/reference/env/
