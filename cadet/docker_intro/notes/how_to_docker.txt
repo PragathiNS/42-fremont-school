@@ -1,0 +1,10 @@
+Install:
+1. docker
+2. docker-machine
+3. virtualbox
+
+commands:
+docker version
+
+
+Implementing clustering locally and it's done easily with docker-machine

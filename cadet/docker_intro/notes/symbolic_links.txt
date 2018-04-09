@@ -1,0 +1,17 @@
+Symlinks --> Symbolic links (are special files that point to files or
+directories in other locations on your system)
+
+Particularly useful when apps don't want to work correctly with a regular alias.
+
+"ln" utility (creates symbolic links in macOS)
+
+Symlinks works in every application on the system, including command-line
+utilities in the terminal. The link that you create appears to apps to be the
+same as the original file or folder it's pointing at-even though it's just a
+link.
+
+Hard links --> A symbolic or soft link points to a path in the file system. 
+It will actually point to the underlying INODE on the file system.
+If you created a hard link from /users/ex pointing to opt/ex and later moved
+/opt/ex, the link at /users/ex would still point to the file, no matter where
+you moved it. The hard link works at the lower level.
