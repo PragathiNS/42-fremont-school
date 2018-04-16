@@ -66,7 +66,6 @@ int		divide_pieces(char *f_str)
 {
 	t_tetris	*tet_list;
 	t_map		*map;
-	int			map_sz;
 	int			tet_id;
 	
 	tet_id = 0;
@@ -87,5 +86,7 @@ int		divide_pieces(char *f_str)
 		map = gen_map(map_sz);
 	}
 	print_map(map);
+	//free_map(map);
+	// free(tet_list);
 	return (1);
 }
