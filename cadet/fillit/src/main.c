@@ -6,7 +6,7 @@
 /*   By: pnarayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/05 22:47:36 by pnarayan          #+#    #+#             */
-/*   Updated: 2018/04/16 02:48:41 by pnarayan         ###   ########.fr       */
+/*   Updated: 2018/04/16 05:06:33 by pnarayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,14 @@ int		read_file(char *filename)
 		return (0);
 	while ((ret = read(fd, buff, BUFFSIZE)))
 	{
-		if (ret > 545)
-			return (0);
+		/*if (ret > 545)
+			return (0);*/
 		if ((full_str = (char *)ft_memalloc(ret + 1)) != NULL)
 			ft_strncpy(full_str, buff, ret);
 		full_str[ret] = '\0';
 	}
 	close(fd);
-	if (!divide_pieces(full_str))
-		return (0);
-	return (1);
+	return (divide_pieces(full_str));
 }
 
 int		main(int argc, char **argv)

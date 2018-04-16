@@ -6,12 +6,15 @@
 /*   By: pnarayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/06 01:04:46 by pnarayan          #+#    #+#             */
-/*   Updated: 2018/04/15 23:31:15 by pnarayan         ###   ########.fr       */
+/*   Updated: 2018/04/16 04:41:53 by pnarayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fillit.h"
 
+/*
+ * Checks for newlines in between tetrominos, beginning and end of the file
+ */
 int		valid_newlines(char *str)
 {
 	if (str[0] == '\n' || (str[ft_strlen(str) - 2] == '\n' &&
@@ -20,6 +23,9 @@ int		valid_newlines(char *str)
 	return (1);
 }
 
+/*
+ * Checks for the valid tetromino shape
+ */
 int     valid_shape(char **str)
 {
 	int     connect;
@@ -29,29 +35,29 @@ int     valid_shape(char **str)
 	x = 0;
 	y = 0;
 	connect = 0;
-	while (y < 4)
+	while (y < ARR_SIZE)
 	{
 		x = 0;
-		while (x < 4)
+		while (x < ARR_SIZE)
 		{
 			if (str[y][x] == '#')
 			{
-				if (y != 3)
-					if (str[y + 1][x] == '#')
-						connect++;
-				if (x != 3)
-					if (str[y][x + 1] == '#')
-						connect++;
+				if (y != 3 && (str[y + 1][x] == '#'))
+					connect++;
+				if (x != 3 && (str[y][x + 1] == '#'))
+					connect++;
 			}
 			x++;
 		}
 		y++;
 	}
-	if (connect > 2)
-		return(1);
-	return(0);
+	return (connect > 2);
 }
 
+/*
+ * Checks for the valid characters ('.' or '#'), no of '#' in a tetrimino and
+ * '\n' at the end of each row
+ */
 int     valid_piece(char **str)
 {
 	int     shrp_cnt;
@@ -60,10 +66,10 @@ int     valid_piece(char **str)
 
 	shrp_cnt = 0;
 	y = 0;
-	while (y < 4)
+	while (y < ARR_SIZE)
 	{
 		x = 0;
-		while (x < 4)
+		while (x < ARR_SIZE)
 		{
 			if (str[y][x] == '.')
 				x++;
@@ -80,7 +86,5 @@ int     valid_piece(char **str)
 		else
 			return (0);
 	}
-	if ((shrp_cnt == 4) && valid_shape(str))
-		return (1);
-	return (0);
+	return ((shrp_cnt == VALID_SHRP) && valid_shape(str));
 }

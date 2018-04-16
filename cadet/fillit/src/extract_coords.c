@@ -6,12 +6,15 @@
 /*   By: pnarayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/06 01:19:55 by pnarayan          #+#    #+#             */
-/*   Updated: 2018/04/15 23:30:12 by pnarayan         ###   ########.fr       */
+/*   Updated: 2018/04/16 04:13:30 by pnarayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fillit.h"
 
+/*
+ * Extracts the coordinates of the '#' characters in the current tetromino
+ */
 void	extract_tet(t_tetris **tet_list, char **arr, int tet_id)
 {
 	int			x;
@@ -21,10 +24,10 @@ void	extract_tet(t_tetris **tet_list, char **arr, int tet_id)
 
 	i = 0;
 	x = 0;
-	while (i < 4)
+	while (i < ARR_SIZE)
 	{
 		j = 0;
-		while (j < 4)
+		while (j < ARR_SIZE)
 		{
 			if (arr[i][j] == '#')
 			{

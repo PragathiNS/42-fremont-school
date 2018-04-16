@@ -6,37 +6,41 @@
 /*   By: pnarayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/12 18:17:38 by pnarayan          #+#    #+#             */
-/*   Updated: 2018/04/16 00:57:36 by pnarayan         ###   ########.fr       */
+/*   Updated: 2018/04/16 05:17:58 by pnarayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fillit.h"
 
+/*
+ * Backtracking algorithm to solve tetris
+ */
 int		solve_tet(t_map *map, t_tetris **tetlist)
 {
-	int			x;
-	int			y;
+	/*int			x;
+	int			y;*/
+	t_point		point;
 	t_tetris	*curr;
 
-	x = 0;
+	point.x = 0;
 	curr = *tetlist;
 	if (curr == NULL)
 		return (1);
-	while (x < map->size)
+	while (point.x < map->size)
 	{
-		y = 0;
-		while (y < map->size)
+		point.y = 0;
+		while (point.y < map->size)
 		{
-			if (place_if_valid(x, y, map, curr))
+			if (place_if_valid(point, map, curr))
 			{
 				if (solve_tet(map, &(curr->next)))
-                    return(1);
-                else
-					clear_piece(curr, map, x, y);
+					return(1);
+				else
+					clear_piece(curr, map, point, '.');
 			}
-			y++;
+			point.y++;
 		}
-		x++;
+		point.x++;
 	}
 	return (0);
 }

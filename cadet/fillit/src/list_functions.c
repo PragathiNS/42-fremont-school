@@ -6,27 +6,15 @@
 /*   By: pnarayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/11 04:38:38 by pnarayan          #+#    #+#             */
-/*   Updated: 2018/04/16 02:40:22 by pnarayan         ###   ########.fr       */
+/*   Updated: 2018/04/16 04:25:41 by pnarayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fillit.h"
 
-void	display_list(t_tetris **tetrisList)
-{
-	t_tetris *tetris;
-
-	tetris = *tetrisList;
-	if (tetris != NULL)
-	{
-		while (tetris)
-		{
-			ft_putchar(tetris->tet_id);
-			tetris = tetris->next;
-		}
-	}
-}
-
+/*
+ * Returns the total number of tetrominos in the list
+ */
 int		list_count(t_tetris **tetrisList)
 {
 	t_tetris 	*tetris;
@@ -44,7 +32,10 @@ int		list_count(t_tetris **tetrisList)
 	}
 	return (count);
 }
-	
+
+/*
+ * Creates a tetromino node in the list by filling in the structure t_tetris
+ */
 t_tetris	*ft_create_piece(int *coords, int x, int y, int tet_id)
 {
 	t_tetris 	*one_piece;
@@ -68,6 +59,9 @@ t_tetris	*ft_create_piece(int *coords, int x, int y, int tet_id)
 	return (one_piece);
 }
 
+/*
+ * Adds the current tetromino to the t_tetris list
+ */
 void	ft_add_piece(t_tetris **tetris, int *co, int tet_id)
 {
 	t_tetris	*piece;
@@ -76,7 +70,7 @@ void	ft_add_piece(t_tetris **tetris, int *co, int tet_id)
 
 	piece = *tetris;
 	x = co[0];
-   	y = co[1];
+	y = co[1];
 	if (piece != NULL)
 	{
 		while (piece->next != NULL)
@@ -85,4 +79,21 @@ void	ft_add_piece(t_tetris **tetris, int *co, int tet_id)
 	}
 	else
 		*tetris = ft_create_piece(co, x, y, tet_id);
+}
+
+/*
+ * Frees the memory allocated by the list of tetrominos
+ */
+void	free_tetris(t_tetris **tetris)
+{
+	t_tetris	*tet;
+	t_tetris	*tmp;
+
+	tet = *tetris;
+	while (tet != NULL)
+	{
+		tmp = tet;
+		tet = tet->next;
+		free(tmp);
+	}
 }
