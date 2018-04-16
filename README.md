@@ -29,3 +29,9 @@ Created a dynamic library with all the string, memory and list functions.
 10. Cattle of Geryon
 11. Apples of the Hesperides
 12. Capturing Cerberus
+
+#### [FILLIT](https://github.com/PragathiNS/42-fremont-school/tree/master/cadet/fillit)
+Tetris Game
+
+#### [GET_NEXT_LINE](https://github.com/PragathiNS/42-fremont-school/tree/master/cadet/get_next_line)
+code a function that returns a line ending with a newline, read from a file descriptor
