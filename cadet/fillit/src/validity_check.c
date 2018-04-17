@@ -6,15 +6,16 @@
 /*   By: pnarayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/06 01:04:46 by pnarayan          #+#    #+#             */
-/*   Updated: 2018/04/16 04:41:53 by pnarayan         ###   ########.fr       */
+/*   Updated: 2018/04/16 21:53:52 by pnarayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fillit.h"
 
 /*
- * Checks for newlines in between tetrominos, beginning and end of the file
- */
+** Checks for newlines in between tetrominos, beginning and end of the file
+*/
+
 int		valid_newlines(char *str)
 {
 	if (str[0] == '\n' || (str[ft_strlen(str) - 2] == '\n' &&
@@ -24,13 +25,14 @@ int		valid_newlines(char *str)
 }
 
 /*
- * Checks for the valid tetromino shape
- */
-int     valid_shape(char **str)
+** Checks for the valid tetromino shape
+*/
+
+int		valid_shape(char **str)
 {
-	int     connect;
-	int		x;
-	int		y;
+	int	connect;
+	int	x;
+	int	y;
 
 	x = 0;
 	y = 0;
@@ -55,14 +57,15 @@ int     valid_shape(char **str)
 }
 
 /*
- * Checks for the valid characters ('.' or '#'), no of '#' in a tetrimino and
- * '\n' at the end of each row
- */
-int     valid_piece(char **str)
+** Checks for the valid characters ('.' or '#'), no of '#' in a tetrimino and
+** '\n' at the end of each row
+*/
+
+int		valid_piece(char **str)
 {
-	int     shrp_cnt;
-	int		x;
-	int		y;
+	int	shrp_cnt;
+	int	x;
+	int	y;
 
 	shrp_cnt = 0;
 	y = 0;
@@ -73,11 +76,8 @@ int     valid_piece(char **str)
 		{
 			if (str[y][x] == '.')
 				x++;
-			else if (str[y][x] == '#')
-			{
-				x++;
+			else if (str[y][x++] == '#')
 				shrp_cnt++;
-			}
 			else
 				return (0);
 		}

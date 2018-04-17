@@ -6,16 +6,17 @@
 /*   By: pnarayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/06 00:32:37 by pnarayan          #+#    #+#             */
-/*   Updated: 2018/04/16 04:31:59 by pnarayan         ###   ########.fr       */
+/*   Updated: 2018/04/16 21:46:34 by pnarayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fillit.h"
 
 /*
- * Converts 1D char array to 2D char array, calls the validity functions on the
- * array and if valid then calls the extract_coords
- */
+** Converts 1D char array to 2D char array, calls the validity functions on the
+** array and if valid then calls the extract_coords
+*/
+
 int		conv_2d(t_tetris **tet_list, char *str, int tet_id)
 {
 	char	**arr;
@@ -42,8 +43,9 @@ int		conv_2d(t_tetris **tet_list, char *str, int tet_id)
 }
 
 /*
- * Divides the full string into single tetrominos and calls conv_2d
- */
+** Divides the full string into single tetrominos and calls conv_2d
+*/
+
 int		div_conv(t_tetris **tet_list, char *f_str)
 {
 	char		*piece_str;
@@ -70,10 +72,11 @@ int		div_conv(t_tetris **tet_list, char *f_str)
 }
 
 /*
- * Calls for initial newline checks on the full string and calls the required
- * functions to convert the file into list of tetris piece and calls solve_map
- * function
- */
+** Calls for initial newline checks on the full string and calls the required
+** functions to convert the file into list of tetris piece and calls solve_map
+** function
+*/
+
 int		divide_pieces(char *f_str)
 {
 	t_tetris	*tet_list;

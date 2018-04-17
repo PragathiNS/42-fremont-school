@@ -6,19 +6,18 @@
 /*   By: pnarayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/12 18:17:38 by pnarayan          #+#    #+#             */
-/*   Updated: 2018/04/16 05:17:58 by pnarayan         ###   ########.fr       */
+/*   Updated: 2018/04/16 22:02:05 by pnarayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fillit.h"
 
 /*
- * Backtracking algorithm to solve tetris
- */
+** Backtracking algorithm to solve tetris
+*/
+
 int		solve_tet(t_map *map, t_tetris **tetlist)
 {
-	/*int			x;
-	int			y;*/
 	t_point		point;
 	t_tetris	*curr;
 
@@ -34,9 +33,9 @@ int		solve_tet(t_map *map, t_tetris **tetlist)
 			if (place_if_valid(point, map, curr))
 			{
 				if (solve_tet(map, &(curr->next)))
-					return(1);
+					return (1);
 				else
-					clear_piece(curr, map, point, '.');
+					fill_map(curr, map, point, '.');
 			}
 			point.y++;
 		}

@@ -6,22 +6,23 @@
 /*   By: pnarayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/11 04:38:38 by pnarayan          #+#    #+#             */
-/*   Updated: 2018/04/16 04:25:41 by pnarayan         ###   ########.fr       */
+/*   Updated: 2018/04/16 21:59:38 by pnarayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fillit.h"
 
 /*
- * Returns the total number of tetrominos in the list
- */
-int		list_count(t_tetris **tetrisList)
+** Returns the total number of tetrominos in the list
+*/
+
+int			list_count(t_tetris **tetrislist)
 {
-	t_tetris 	*tetris;
+	t_tetris	*tetris;
 	int			count;
 
 	count = 0;
-	tetris = *tetrisList;
+	tetris = *tetrislist;
 	if (tetris != NULL)
 	{
 		while (tetris)
@@ -34,11 +35,12 @@ int		list_count(t_tetris **tetrisList)
 }
 
 /*
- * Creates a tetromino node in the list by filling in the structure t_tetris
- */
+** Creates a tetromino node in the list by filling in the structure t_tetris
+*/
+
 t_tetris	*ft_create_piece(int *coords, int x, int y, int tet_id)
 {
-	t_tetris 	*one_piece;
+	t_tetris	*one_piece;
 	int			co;
 	int			i;
 
@@ -60,9 +62,10 @@ t_tetris	*ft_create_piece(int *coords, int x, int y, int tet_id)
 }
 
 /*
- * Adds the current tetromino to the t_tetris list
- */
-void	ft_add_piece(t_tetris **tetris, int *co, int tet_id)
+** Adds the current tetromino to the t_tetris list
+*/
+
+void		ft_add_piece(t_tetris **tetris, int *co, int tet_id)
 {
 	t_tetris	*piece;
 	int			x;
@@ -82,9 +85,10 @@ void	ft_add_piece(t_tetris **tetris, int *co, int tet_id)
 }
 
 /*
- * Frees the memory allocated by the list of tetrominos
- */
-void	free_tetris(t_tetris **tetris)
+** Frees the memory allocated by the list of tetrominos
+*/
+
+void		free_tetris(t_tetris **tetris)
 {
 	t_tetris	*tet;
 	t_tetris	*tmp;

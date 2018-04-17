@@ -6,7 +6,7 @@
 #    By: pnarayan <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/13 16:54:07 by pnarayan          #+#    #+#              #
-#    Updated: 2018/04/16 04:51:08 by pnarayan         ###   ########.fr        #
+#    Updated: 2018/04/17 01:11:50 by pnarayan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = fillit
 
 IDIR = ./include
 CC = gcc
-CFLAGS = -g -Wall -Werror -Wextra -Wunused -I $(IDIR)
+CFLAGS = -Wall -Werror -Wextra -Wunused -I $(IDIR)
 
 _DEPS = fillit.h
 DEPS = $(patsubst %, $(IDIR)/%, $(_DEPS))
