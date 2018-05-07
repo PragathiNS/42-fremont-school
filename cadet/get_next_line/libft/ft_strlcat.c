@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnarayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/16 05:51:48 by pnarayan          #+#    #+#             */
-/*   Updated: 2018/05/06 18:05:25 by pnarayan         ###   ########.fr       */
+/*   Created: 2018/02/27 20:09:51 by pnarayan          #+#    #+#             */
+/*   Updated: 2018/03/07 19:40:39 by pnarayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-#ifndef GET_NEXT_LINE_H
-#define GET_NEXT_LINE_H
-#include <stdio.h>
-#include <string.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include "../libft/libft.h"
-#define BUFFSIZE 1
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
+{
+	size_t	len;
+	char	*d;
 
-//int		get_next_line(const int fd, char **line);
-void	get_next_line(const char fd, char **line);
-
-#endif
+	d = ft_memchr(dest, '\0', size);
+	if (d == NULL)
+		d = dest + size;
+	len = d - dest;
+	return (len + ft_strlcpy(d, src, size - len));
+}

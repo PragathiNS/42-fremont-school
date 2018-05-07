@@ -1,26 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_wordcount.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnarayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/16 05:51:48 by pnarayan          #+#    #+#             */
-/*   Updated: 2018/05/06 18:05:25 by pnarayan         ###   ########.fr       */
+/*   Created: 2018/03/10 23:45:59 by pnarayan          #+#    #+#             */
+/*   Updated: 2018/03/11 00:22:15 by pnarayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-#ifndef GET_NEXT_LINE_H
-#define GET_NEXT_LINE_H
-#include <stdio.h>
-#include <string.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include "../libft/libft.h"
-#define BUFFSIZE 1
+int		ft_wordcount(char *str)
+{
+	int		i;
+	int		word_count;
+	int		start;
 
-//int		get_next_line(const int fd, char **line);
-void	get_next_line(const char fd, char **line);
-
-#endif
+	i = 0;
+	word_count = 0;
+	start = 1;
+	while (str[i] != '\0')
+	{
+		if (!ft_isspace(str[i]))
+		{
+			if (start)
+			{
+				word_count++;
+				start = 0;
+			}
+		}
+		else
+			start = 1;
+		i++;
+	}
+	return (word_count);
+}

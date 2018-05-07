@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnarayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/16 05:51:48 by pnarayan          #+#    #+#             */
-/*   Updated: 2018/05/06 18:05:25 by pnarayan         ###   ########.fr       */
+/*   Created: 2018/02/27 19:40:39 by pnarayan          #+#    #+#             */
+/*   Updated: 2018/03/07 19:54:53 by pnarayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-#ifndef GET_NEXT_LINE_H
-#define GET_NEXT_LINE_H
-#include <stdio.h>
-#include <string.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include "../libft/libft.h"
-#define BUFFSIZE 1
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
+{
+	int					diff;
+	const unsigned char	*us1;
+	const unsigned char	*us2;
 
-//int		get_next_line(const int fd, char **line);
-void	get_next_line(const char fd, char **line);
-
-#endif
+	us1 = (const unsigned char*)s1;
+	us2 = (const unsigned char*)s2;
+	diff = 0;
+	while (n-- != 0)
+	{
+		if (*us1 != *us2)
+		{
+			diff = (int)*us1 - *us2;
+			break ;
+		}
+		us1++;
+		us2++;
+	}
+	return (diff);
+}

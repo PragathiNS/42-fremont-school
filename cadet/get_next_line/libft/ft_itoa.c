@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnarayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/16 05:51:48 by pnarayan          #+#    #+#             */
-/*   Updated: 2018/05/06 18:05:25 by pnarayan         ###   ########.fr       */
+/*   Created: 2018/03/11 00:25:32 by pnarayan          #+#    #+#             */
+/*   Updated: 2018/03/17 02:51:08 by pnarayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-#ifndef GET_NEXT_LINE_H
-#define GET_NEXT_LINE_H
-#include <stdio.h>
-#include <string.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include "../libft/libft.h"
-#define BUFFSIZE 1
+char	*ft_itoa(int n)
+{
+	char			*s;
+	size_t			len;
+	unsigned int	n_c;
 
-//int		get_next_line(const int fd, char **line);
-void	get_next_line(const char fd, char **line);
-
-#endif
+	len = ft_no_digits(n);
+	n_c = n;
+	if (n < 0)
+	{
+		n_c = -n;
+		len++;
+	}
+	if (!(s = ft_strnew(len)))
+		return (NULL);
+	s[--len] = n_c % 10 + '0';
+	while (n_c /= 10)
+		s[--len] = n_c % 10 + '0';
+	if (n < 0)
+		*(s + 0) = '-';
+	return (s);
+}
