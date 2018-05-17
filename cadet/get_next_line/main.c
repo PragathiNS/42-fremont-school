@@ -6,7 +6,7 @@
 /*   By: pnarayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/06 17:43:20 by pnarayan          #+#    #+#             */
-/*   Updated: 2018/05/06 21:39:22 by pnarayan         ###   ########.fr       */
+/*   Updated: 2018/05/17 01:01:58 by pnarayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		get_next_line(const int fd, char **line)
 
 	i = 0;
 	n_count = 0;
-	if (fd < 0 || line == NULL )//|| read(fd, &buff, BUFFSIZE) <= 0)
+	if (fd < 0 || line == NULL )
 		return (-1);
 	while (read(fd, &buff, BUFFSIZE) > 0)
 	{
